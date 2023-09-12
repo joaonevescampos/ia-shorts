@@ -7,16 +7,23 @@
 
 #logo img{
     width: 180px;
+    margin-bottom: 30px;
+}
+
+.textarea{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 input{
-    margin: 30px;
+    margin-right: 10px;
 
     background-color: rgb(73, 71, 71);
     border-radius: 5px;
     border: solid 1px rgb(108, 180, 1);
 
-    width: 300px;
+    width: 250px;
     height: 30px;
 }
 
@@ -27,4 +34,32 @@ button{
 
     width: 35px;
     height: 35px;
+    cursor: pointer;
 }
+
+button > span{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    width: 300px;
+}
+
+
+h2{
+    color: rgb(206, 206, 206);
+    text-align: left;
+    font-size: 12pt;
+    user-select: none;
+}
+
+p{
+    font-size: 10pt;
+}
+
+.placeholder{
+    color: gray;
+    user-select: none;
+}
+
