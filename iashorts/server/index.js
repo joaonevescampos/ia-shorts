@@ -8,7 +8,7 @@ app.use(cors())
 
 app.get('/summary/:id', (request, response) => {
   download(request.params.id)
-  response.send('ID do vídeo:' + request.params.id)
+  response.json({ result: 'Download do video realizado com sucesso!'})
   
 })
 
