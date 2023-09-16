@@ -1,7 +1,7 @@
 import ytdl from 'ytdl-core'
 import fs from 'fs'
 
-export const download = (videoId) => {
+export const download = (videoId) => new Promise((resolve, reject) => {
     const videoURL = 'https://www.youtube.com/shorts/' + videoId
     console.log('Realizando o download do video:', videoId)
 
@@ -12,14 +12,16 @@ export const download = (videoId) => {
             const seconds = info.formats[0].approxDurationMs / 1000
 
             if(seconds > 60){
-                throw new Error('Este vídeo não parece ser um shorts.')
+                throw new Error('Este vídeo tem mais de 1 minuto de duração. Favor escolher um vídeo shorts abaixo de 1 minuto.')
             }
     })
     .on('end', () => {
         console.log('Download do video realizado com sucesso.')
+        resolve()
     })
     .on('error', (error) => {
         console.log('Não foi possível realizar o download do vídeo. Detalhes do erro:', error)
+        reject(error)
     })
     .pipe(fs.createWriteStream('./tmp/audio.mp4'))
-}
+})

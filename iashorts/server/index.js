@@ -2,14 +2,17 @@ import cors from 'cors'
 import express from 'express'
 
 import {download} from './download.js'
+import { transcribe } from './transcribe.js'
 
 const app = express()
 app.use(cors())
 
-app.get('/summary/:id', (request, response) => {
-  download(request.params.id)
-  response.json({ result: 'Download do video realizado com sucesso!'})
+app.get('/summary/:id', async (request, response) => {
+  await download(request.params.id)
+  const result = await transcribe()
+
+  response.json({ result })
   
 })
 
-app.listen(5173, () => console.log('Servidor tá executando na porta 5173'))
+app.listen(3333, () => console.log('Servidor tá executando na porta 3333'))
