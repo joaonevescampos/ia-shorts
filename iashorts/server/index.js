@@ -6,11 +6,15 @@ import { download } from "./download.js"
 import { transcribe } from "./transcribe.js"
 import { summarize } from "./summarize.js"
 
-const port = process.env.PORT || 3333
-
 const app = express()
 app.use(express.json())
 app.use(cors())
+
+const port = process.env.PORT || 3333
+app.get('/', (req, res) => {
+  return res.json('Hello World')
+})
+
 
 app.get("/summary/:id", async (request, response) => {
   try {
