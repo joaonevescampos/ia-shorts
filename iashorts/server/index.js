@@ -12,7 +12,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3333
 console.log(process.env.PORT)
 
 app.get('/', (req, res) => {
@@ -42,4 +42,4 @@ app.post("/summary", async (request, response) => {
   }
 })
 
-app.listen(port, () => console.log("Server is running on port 3001"))
+app.listen(port, () => console.log("Server is running on port 3333"))
