@@ -1,23 +1,23 @@
 import cors from "cors"
 import express from "express"
+import "dotenv/config"
 
 import { convert } from "./convert.js"
 import { download } from "./download.js"
 import { transcribe } from "./transcribe.js"
 import { summarize } from "./summarize.js"
-import 'dotenv/config'
-
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3333
 console.log(process.env.PORT)
 
 app.get('/', (req, res) => {
   return res.json('Hello World')
 })
+
 
 app.get("/summary/:id", async (request, response) => {
   try {
@@ -42,4 +42,4 @@ app.post("/summary", async (request, response) => {
   }
 })
 
-app.listen(port, () => console.log("Server is running on port 3001"))
+app.listen(3333, () => console.log("Server is running on port 3333"))
