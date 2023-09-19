@@ -1,36 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ia Shorts</title>
-    <link rel="shortcut icon" href="public/iashorts-icone.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  </head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="web/styles/app.css">
+    <link rel="stylesheet" href="web/styles/base.css">
+    <link rel="stylesheet" href="web/styles/form.css">
 
+    <title>IA Shorts</title>
+  </head>
   <body>
     <div id="app">
-      <div id="logo">
-        <img src="img/iashorts-semfundo.png" alt="logo">
-      </div>
+      <img src="./img/iashorts-semfundo.png" alt="Logo" />
 
-      <form class="textarea">
-        <input type="url" id="url" placeholder="URL do vídeo shorts">
-        <button title="resumir">
-          <span class="material-symbols-outlined" style="color: rgb(58, 58, 58);">
-            play_arrow
-          </span>
+      <form id="form">
+        <input type="url" id="url" placeholder="URL do vídeo" />
+        <button title="Resumir">
+          <i class="ph ph-play"></i>
         </button>
       </form>
 
-      <section>
-        <h2>Resumo</h2>
-        <p id="content" class="placeholder">Escolha um short para resumir</p>
-      </section>
-
+      <h2>Resumo</h2>
+      <p id="content" class="placeholder">Escolha um short para resumir</p>
     </div>
     <script type="module" src="web/main.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </body>
- 
-
 </html>

@@ -1,69 +1,33 @@
-#app{
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  width: 320px;
 }
 
-#logo img{
-  width: 180px;
-  margin-bottom: 30px;
+#app img{
+  width: 200px;
 }
 
-.textarea{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
+#app > h2 {
+  align-self: flex-start;
+  margin-top: 64px;
 }
 
-input{
-  margin-right: 10px;
-  color: white;
-
-  background-color: rgb(73, 71, 71);
-  border-radius: 5px;
-  border: solid 2px rgb(162, 231, 58);
-
-  width: 250px;
-  height: 30px;
+#app > p {
+  align-self: flex-start;
+  text-align: justify;
+  width: 512px;
+  margin-top: -5px;
 }
 
-button{
-  background-color: rgb(162, 231, 58);
-  border: none;
-  border-radius: 5px;
-
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
-
-button > span{
-  margin: 0;
-  padding: 0;
-}
-
-button:hover{
-  background-color: rgb(95, 238, 39);
-}
-
-section{
-  width: 300px;
-}
-
-
-h2{
-  color: rgb(206, 206, 206);
-  text-align: left;
-  font-size: 12pt;
+#app .placeholder {
+  color: #7c7c8a;
   user-select: none;
 }
 
-p{
-  font-size: 10pt;
-}
-
-.placeholder{
-  color: gray;
-  user-select: none;
+@media screen and (orientation: landscape){
+  #app {
+    width: 480px;
+  }
 }
