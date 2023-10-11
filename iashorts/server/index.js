@@ -7,17 +7,10 @@ import { transcribe } from "./transcribe.js"
 import { summarize } from "./summarize.js"
 import 'dotenv/config'
 
-
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-const port = process.env.PORT || 3333
-console.log(process.env.PORT)
-
-app.get('/', (req, res) => {
-  return res.json('Hello World')
-})
 
 app.get("/summary/:id", async (request, response) => {
   try {
@@ -42,4 +35,4 @@ app.post("/summary", async (request, response) => {
   }
 })
 
-app.listen(port, () => console.log("Server is running on port 3333"))
+app.listen(process.env.PORT, () => console.log("Server is running on port 3333"))
