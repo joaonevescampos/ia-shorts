@@ -1,15 +1,3 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "./dist/assets/index-aa217a4a.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/dist/assets/index-aa217a4a.js"
-        }
-    ]
+    "rewrites": [{"source": "/(.*)", "destination": "/"}]
 }
